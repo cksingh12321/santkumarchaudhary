@@ -139,6 +139,14 @@ a:hover { text-decoration: underline; }
   padding: 0.05rem 0.35rem;
   border-radius: 999px;
   text-decoration: none;
+  font-size: 0.85rem;
+}
+.lang-switch a[lang="hi"] {
+  font-family: "Noto Sans Devanagari", "Noto Serif Devanagari", "Mangal",
+               "Devanagari Sangam MN", "Kohinoor Devanagari",
+               "Nirmala UI", "Aparajita", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1;
 }
 .lang-switch a:hover { color: var(--ink); }
 .lang-switch a.active {
