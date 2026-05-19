@@ -125,36 +125,54 @@ a:hover { text-decoration: underline; }
 /* Language switcher */
 .lang-switch {
   display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+  align-items: stretch;
+  gap: 2px;
   margin-left: 0.5rem;
-  padding: 0.3rem 0.6rem;
+  padding: 3px;
+  background: var(--paper-2);
   border: 1px solid var(--line);
   border-radius: 999px;
   font-family: system-ui, -apple-system, sans-serif;
-  font-size: 0.8rem;
+  line-height: 1;
 }
 .lang-switch a {
-  color: var(--ink-soft);
-  padding: 0.05rem 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  min-height: 30px;
+  padding: 0.35rem 0.75rem;
   border-radius: 999px;
+  color: var(--ink);
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background 0.12s ease, color 0.12s ease;
 }
 .lang-switch a[lang="hi"] {
   font-family: "Noto Sans Devanagari", "Noto Serif Devanagari", "Mangal",
                "Devanagari Sangam MN", "Kohinoor Devanagari",
                "Nirmala UI", "Aparajita", sans-serif;
-  font-size: 0.95rem;
-  line-height: 1;
+  font-size: 1rem;
 }
-.lang-switch a:hover { color: var(--ink); }
+.lang-switch a:hover { background: rgba(196, 74, 26, 0.08); }
 .lang-switch a.active {
   background: var(--saffron);
   color: #fff;
-  font-weight: 600;
 }
-.lang-switch .sep { color: var(--line); }
+.lang-switch a.active:hover { background: var(--saffron-dark); }
+.lang-switch .sep { display: none; }
+
+@media (max-width: 880px) {
+  .lang-switch { margin-left: 0.35rem; padding: 2px; }
+  .lang-switch a {
+    min-width: 42px;
+    min-height: 36px;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.95rem;
+  }
+  .lang-switch a[lang="hi"] { font-size: 1.05rem; }
+}
 
 html[lang="hi"] body {
   font-family: "Noto Serif Devanagari", "Mangal", "Tiro Devanagari Hindi", Georgia, serif;
